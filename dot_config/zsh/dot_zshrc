@@ -1,0 +1,55 @@
+# ──────────────────────────────────────────
+#  Main Zsh Configuration
+#  Environment variables are set in ~/.zprofile
+# ──────────────────────────────────────────
+
+# ─── Load Modules ─────────────────────────
+zmodload zsh/complist
+autoload -U compinit && compinit
+autoload -U colors && colors
+
+# ─── History Settings ─────────────────────
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE="$XDG_CACHE_HOME/zsh_history" # Store history in cache directory
+
+# ─── Tab Completion ───────────────────────
+zstyle ':completion:*' menu select                     # Enable tab selection menu
+zstyle ':completion:*' special-dirs true               # Show '.' and '..' in completion
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33  # Colorize completion menu
+# zstyle ':completion:*' file-list true                # Enable detailed file listings (commented out)
+zstyle ':completion:*' squeeze-slashes false           # Allow /**/ expansion
+
+
+# main opts
+setopt append_history inc_append_history share_history # better history
+# on exit, history appends rather than overwrites; history is appended as soon as cmds executed; history shared across sessions
+setopt auto_menu menu_complete # autocmp first menu match
+setopt autocd # type a dir to cd
+setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
+setopt no_case_glob no_case_match # make cmp case insensitive
+setopt globdots # include dotfiles
+setopt extended_glob # match ~ # ^
+setopt interactive_comments # allow comments in shell
+
+
+# ─── Aliases ──────────────────────────────
+alias vim="nvim"
+alias v="nvim"
+alias grep="rg"
+
+# ─── Key Bindings ─────────────────────────
+# Navigate command history with Ctrl+J (↓) and Ctrl+K (↑)
+bindkey "^J" history-search-forward
+bindkey "^K" history-search-backward
+
+# Move between words using Ctrl+← / Ctrl+→
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# ─── Prompt Configuration ─────────────────
+PROMPT='%F{blue}%~%f $ '
+
+# ─── Syntax Highlighting ──────────────────
+# Requires 'zsh-syntax-highlighting' package
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

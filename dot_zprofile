@@ -1,0 +1,20 @@
+#!/bin/sh
+# env vars to set on login, zsh settings in ~/config/zsh/.zshrc
+
+ # follow XDG base dir specification
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# bootstrap .zshrc to ~/.config/zsh/.zshrc, any other zsh config files can also reside here
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# Default Apps
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="firefox"
+
+export GTK_USE_PORTAL=1
+export STEAM_FORCE_DESKTOPUI_SCALING=1.25
+export COSMIC_DISABLE_DIRECT_SCANOUT=1
+export SSH_AUTH_SOCK=/home/toby/.bitwarden-ssh-agent.sock

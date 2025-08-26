@@ -1,0 +1,59 @@
+/* Waybar main window */
+window#waybar {
+    background: rgba(29, 31, 33, 0.4); /* semi-transparent dark bar */
+    color: #e0e0e0; /* default text color */
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-size: 12pt;
+}
+
+/* Workspaces */
+#workspaces button {
+    color: #d3d3d3;      /* light grey for inactive */
+    background: transparent; /* no background */
+    border: none;           /* no border */
+    padding: 0 4px 0 16px;         /* small spacing */
+    font-weight: normal;    /* normal weight */
+    transition: color 0.2s ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    color: #ffffff;       /* white for active/focused workspace */
+}
+
+/* Optional urgent workspace styling */
+#workspaces button.urgent {
+    color: #ff5555;       /* red for urgent */
+}
+
+/* Tray and module spacing */
+.modules-right,
+#custom-expand-icon {
+    margin-right: 8px;
+}
+
+/* Pulseaudio module spacing */
+#pulseaudio {
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+
+/* Tooltip styling */
+tooltip {
+    background: rgba(29, 31, 33, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+tooltip label {
+    color: #e0e0e0;
+}
+
+/* Remove hover shadows and background */
+button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
+}
+

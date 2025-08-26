@@ -1,0 +1,46 @@
+[colors]
+[colors.primary]
+background = "0x1e1e1e"        # Dark neutral background
+foreground = "0xe0e0e0"        # Light neutral text
+
+[colors.normal]
+black   = "0x1e1e1e"
+red     = "0xd64545"           # Calm warning red
+green   = "0x7ecf83"           # Your chosen bright accent green
+yellow  = "0xd6b656"           # Neutral gold
+blue    = "0x5aa7e0"           # Soft blue (not default Windows)
+magenta = "0xba77b1"           # Muted pink
+cyan    = "0x4abebd"           # Cool cyan, doesn't clash
+white   = "0xe0e0e0"
+
+[colors.bright]
+black   = "0x2e2e2e"
+red     = "0xef6f6f"
+green   = "0x9aeab1"           # Brighter version of your accent
+yellow  = "0xf3cf77"
+blue    = "0x81c7f0"
+magenta = "0xd8a2d8"
+cyan    = "0x77ded9"
+white   = "0xf5f5f5"
+
+
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font Mono", style = "Medium" }
+bold = { family = "JetBrains Mono Nerd Font Mono", style = "Bold" }
+italic = { family = "JetBrains Mono Nerd Mono Font Mono", style = "Italic" }
+size = 14 
+
+[window]
+padding.x = 14
+padding.y = 14
+#decorations = "None"
+opacity = 0.8
+
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
+]
