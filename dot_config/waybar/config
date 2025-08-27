@@ -13,6 +13,7 @@
     "modules-right": [
         "tray",
         "network",
+	"mpris",
         "pulseaudio",
         "battery"
         
@@ -62,8 +63,21 @@
         "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-  },
-  "tray": {
+    },
+     "mpris": {
+	"format": "{player_icon}",
+	"format-paused": "{status_icon}",
+	"player-icons": {
+		"default": "▶",
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	"ignored-players": ["firefox"],
+	 "tooltip": true,
+	 "tooltip-format": "{player} - {artist} - {title}"
+   },
+     "tray": {
     "icon-size": 16,
     "spacing": 12
   }

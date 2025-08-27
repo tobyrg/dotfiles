@@ -38,6 +38,11 @@ window#waybar {
     margin-bottom: 2px;
 }
 
+#mpris {
+    margin-left: 12px;
+    margin-bottom: 2px;
+}
+
 /* Tooltip styling */
 tooltip {
     background: rgba(29, 31, 33, 0.9);
